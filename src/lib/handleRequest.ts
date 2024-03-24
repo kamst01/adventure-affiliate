@@ -11,7 +11,7 @@ type ApiResponse<T> = {
 	status: number;
 }
 
-async function handleRequest<T>(options: RequestOptions<T>): Promise<T> {
+export function handleRequest<T>(options: RequestOptions<T>): Promise<T> {
 	const { url, method, body } = options;
 	
 	return new Promise((resolve, reject) => {
@@ -29,5 +29,3 @@ async function handleRequest<T>(options: RequestOptions<T>): Promise<T> {
 		.catch((error) => reject(error));
 	});
 }
-
-export default handleRequest;
