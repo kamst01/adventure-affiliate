@@ -8,6 +8,8 @@
     "baseUrl": "./src",
     "paths": {
       "@/components/*": ["./components/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/*": ["./*"]
     },
 
     /* Bundler mode */
