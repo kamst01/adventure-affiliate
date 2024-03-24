@@ -1,4 +1,4 @@
-import handleRequest from '@/lib/handleRequest.ts';
+import { handleRequest } from '@/lib/handleRequest.ts';
 import { RequestMethod } from '@/types';
 
 type GetCRMProps = {
