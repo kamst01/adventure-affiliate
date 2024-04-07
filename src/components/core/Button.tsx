@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '@/components/core/Link';
+import { Link } from '@/components/core/Link';
 
 type ButtonProps = React.ComponentPropsWithoutRef<typeof Link> &
 	React.ComponentPropsWithoutRef<'button'> &
@@ -15,7 +15,6 @@ type ButtonProps = React.ComponentPropsWithoutRef<typeof Link> &
 		size?: keyof typeof styles.size;
 		className?: string;
 		children: React.ReactNode;
-		href?: string;
 	};
 
 const styles = {
@@ -46,7 +45,7 @@ export const Button = React.forwardRef(function Button(
 		props.outline ? styles.outline : props.plain ? styles.plain : styles.solid
 	} ${styles.size[size]}`;
 
-	return 'href' in props ? (
+	return 'href' in props || 'to' in props ? (
 		<Link
 			{...props}
 			className={combinedClassNames}
